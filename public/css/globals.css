@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Brandon_reg";
+  src: url('/fonts/Brandon_reg.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Brandon_med";
+  src: url('/fonts/Brandon_med.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Brandon_med_it";
+  src: url('/fonts/Brandon_med.otf');
+  font-weight: bold;
+  font-style: bold;
+}

@@ -1,0 +1,339 @@
+[{
+  "_id": {
+    "$oid": "64119f71106eb06e2ccf8d9c"
+  },
+  "name": "Education",
+  "icon": "mdi:education-outline",
+  "isActive": true,
+  "isDeleted": false,
+  "moduleKey": "category"
+},{
+  "_id": {
+    "$oid": "64144cdd106eb06e2ccffc4d"
+  },
+  "name": "Healthcare",
+  "icon": "material-symbols:medical-services",
+  "isActive": true,
+  "isDeleted": false,
+  "moduleKey": "category"
+},{
+  "_id": {
+    "$oid": "641ad7b5d1ed1d81b2564360"
+  },
+  "moduleKey": "Category",
+  "name": "Household",
+  "icon": "mdi:sofa",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679480757224"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679480757224"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad80ed1ed1d81b2564371"
+  },
+  "moduleKey": "Category",
+  "name": "Electronics",
+  "icon": "iconoir:electronics-transistor",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679480846324"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679480846324"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad83ed1ed1d81b2564374"
+  },
+  "moduleKey": "Category",
+  "name": "Food and Beverages",
+  "icon": "mdi:food-fork-drink",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679480894853"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679480894853"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad8aed1ed1d81b2564377"
+  },
+  "moduleKey": "Category",
+  "name": "Hobbies and Interest",
+  "icon": "material-symbols:sports-cricket-outline",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481006822"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481006822"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad8d4d1ed1d81b256437a"
+  },
+  "moduleKey": "Category",
+  "name": "Media",
+  "icon": "carbon:media-library",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481044579"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481044579"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad8ebd1ed1d81b256437d"
+  },
+  "moduleKey": "Category",
+  "name": "Smoking",
+  "icon": "material-symbols:smoking-rooms-rounded",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481067848"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481067848"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad922d1ed1d81b2564380"
+  },
+  "moduleKey": "Category",
+  "name": "Travel",
+  "icon": "zondicons:travel-train",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481122619"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481122619"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad949d1ed1d81b2564383"
+  },
+  "moduleKey": "Category",
+  "name": "Video Game",
+  "icon": "ph:game-controller",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481161553"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481161553"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad976d1ed1d81b2564386"
+  },
+  "moduleKey": "Category",
+  "name": "Automobile",
+  "icon": "zondicons:travel-car",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481206827"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481206827"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad994d1ed1d81b2564389"
+  },
+  "moduleKey": "Category",
+  "name": "Ethnicity",
+  "icon": "ic:baseline-group",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481236734"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481236734"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad9c8d1ed1d81b256438c"
+  },
+  "moduleKey": "Category",
+  "name": "App Download",
+  "icon": "material-symbols:app-blocking-outline",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481288258"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481288258"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ad9f4d1ed1d81b256438f"
+  },
+  "moduleKey": "Category",
+  "name": "Entertainment",
+  "icon": "icon-park-outline:entertainment",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481332043"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481332043"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ada09d1ed1d81b2564392"
+  },
+  "moduleKey": "Category",
+  "name": "Fitness",
+  "icon": "maki:fitness-centre",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481353533"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481353533"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ada26d1ed1d81b2564395"
+  },
+  "moduleKey": "Category",
+  "name": "Gambling",
+  "icon": "mdi:gambling-chip",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481382441"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481382441"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ada45d1ed1d81b2564398"
+  },
+  "moduleKey": "Category",
+  "name": "Employment",
+  "icon": "clarity:employee-line",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481413560"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481413560"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641ada9bd1ed1d81b256439b"
+  },
+  "moduleKey": "Category",
+  "name": "Social Media",
+  "icon": "ion:social-twitter",
+  "isActive": true,
+  "isDeleted": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679481499575"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1679481499575"
+    }
+  },
+  "__v": 0
+}]

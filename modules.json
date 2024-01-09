@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "6359232a6b482b8504007387"
+  },
+  "name": "dashboard",
+  "label": "Dashboard",
+  "icon": "carbon:analytics",
+  "route": "/app/dashboard",
+  "isActive": true,
+  "isDeleted": false,
+  "moduleKey": "dashboard",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1670115540000"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1670115540000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63592f28997c2514ced75e31"
+  },
+  "name": "profile",
+  "label": "Profile Informations",
+  "icon": "fa-solid:user",
+  "route": "/app/profile",
+  "isActive": true,
+  "isDeleted": false,
+  "moduleKey": "profile"
+},{
+  "_id": {
+    "$oid": "63593360997c2514ced75ee3"
+  },
+  "name": "survey",
+  "label": "Surveys",
+  "icon": "ri:survey-fill",
+  "route": "/app/survey",
+  "isActive": true,
+  "isDeleted": false,
+  "moduleKey": "survey"
+},{
+  "_id": {
+    "$oid": "638c57161022c9cae35e976b"
+  },
+  "name": "reward",
+  "label": "Rewards",
+  "icon": "arcticons:rewards",
+  "route": "/app/reward",
+  "isActive": true,
+  "isDeleted": false,
+  "moduleKey": "reward"
+},{
+  "_id": {
+    "$oid": "64117ec0106eb06e2ccf786c"
+  },
+  "name": "support",
+  "label": "Support",
+  "icon": "ic:baseline-support",
+  "route": "/app/support",
+  "isActive": true,
+  "isDeleted": false,
+  "moduleKey": "support"
+}]
