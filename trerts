@@ -36,8 +36,8 @@ location / {
     }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/app.opinion-nation.com-0001/fullchain.pem; #>
-    ssl_certificate_key /etc/letsencrypt/live/app.opinion-nation.com-0001/privkey.pem;>
+    ssl_certificate /etc/letsencrypt/live/app.opinion-nation.com/fullchain.pem; #>
+    ssl_certificate_key /etc/letsencrypt/live/app.opinion-nation.com/privkey.pem;>
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
@@ -56,3 +56,6 @@ server {
 
 }
 
+
+
+sudo pm2 start npm --name "wolfopinionprod" -- start
