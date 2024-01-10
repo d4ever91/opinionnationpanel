@@ -5,6 +5,13 @@ exports.id = 7007;
 exports.ids = [7007];
 exports.modules = {
 
+/***/ 2139:
+/***/ ((module) => {
+
+module.exports = require("@sendgrid/mail");
+
+/***/ }),
+
 /***/ 5888:
 /***/ ((module) => {
 
@@ -30,13 +37,6 @@ module.exports = require("joi");
 /***/ ((module) => {
 
 module.exports = require("mongoose");
-
-/***/ }),
-
-/***/ 5711:
-/***/ ((module) => {
-
-module.exports = require("sib-api-v3-sdk");
 
 /***/ }),
 
@@ -99,7 +99,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib
 
 
 const handler = (0,next_connect__WEBPACK_IMPORTED_MODULE_5__["default"])(_lib_middlewares_server__WEBPACK_IMPORTED_MODULE_4__/* .ncOpts */ .z);
-handler.use(_lib_middlewares_validation_userValidation__WEBPACK_IMPORTED_MODULE_9__/* .validateRegister */ .p);
+handler.use(_lib_middlewares_validation_userValidation__WEBPACK_IMPORTED_MODULE_9__/* .validateRegister */ .p3);
 handler.post(async (req, res)=>{
     try {
         await (0,_lib_middlewares_db_mongodb__WEBPACK_IMPORTED_MODULE_3__/* .connect */ .$j)();
@@ -112,7 +112,7 @@ handler.post(async (req, res)=>{
             var userData = await (0,_lib_middlewares_mongo_service__WEBPACK_IMPORTED_MODULE_2__/* .updateUserById */ .TP)(user._id, {
                 emailToken
             });
-            await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_11__/* .sendVerificationLink */ .$)({
+            await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_11__/* .sendVerificationLink */ .$s)({
                 emailToken: userData.emailToken,
                 name: userData.firstName + " " + userData.lastName,
                 email: userData.email
@@ -122,7 +122,7 @@ handler.post(async (req, res)=>{
         var uuid = await (0,uuid__WEBPACK_IMPORTED_MODULE_7__.v4)();
         req.body.uuid = uuid;
         var data = await (0,_lib_middlewares_mongo_service__WEBPACK_IMPORTED_MODULE_2__/* .insertUser */ ._Y)(req.body);
-        if (data) await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_11__/* .sendVerificationLink */ .$)({
+        if (data) await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_11__/* .sendVerificationLink */ .$s)({
             emailToken: data.emailToken,
             name: data.firstName + " " + data.lastName,
             email: data.email

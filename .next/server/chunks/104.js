@@ -102,6 +102,10 @@ const UserSchema = new external_mongoose_.Schema({
         type: String,
         required: false
     },
+    forgotToken: {
+        type: String,
+        required: false
+    },
     emailVerified: {
         type: Boolean,
         required: false,

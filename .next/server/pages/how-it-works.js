@@ -112,7 +112,7 @@ const HowItWorks = ()=>{
                                                 className: "about-title",
                                                 children: [
                                                     " ",
-                                                    t("howitwork.t2")
+                                                    t("howitwork.t3")
                                                 ]
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
@@ -126,7 +126,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t3")
+                                                children: t("howitwork.t4")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p4")
@@ -142,7 +142,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t4")
+                                                children: t("howitwork.t5")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p6")
@@ -163,7 +163,7 @@ const HowItWorks = ()=>{
                                         /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                         /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                             className: "about-title",
-                                            children: t("howitwork.t5")
+                                            children: t("howitwork.t6")
                                         }),
                                         /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                             children: t("howitwork.p7")
@@ -184,7 +184,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t6")
+                                                children: t("howitwork.t7")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p8")
@@ -197,7 +197,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t7")
+                                                children: t("howitwork.t8")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p9")
@@ -210,7 +210,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t8")
+                                                children: t("howitwork.t9")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p10")
@@ -223,7 +223,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t9")
+                                                children: t("howitwork.t10")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p11")
@@ -236,7 +236,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t10")
+                                                children: t("howitwork.t11")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p12")
@@ -249,7 +249,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t11")
+                                                children: t("howitwork.t12")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.p13")
@@ -262,20 +262,7 @@ const HowItWorks = ()=>{
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
                                             /*#__PURE__*/ jsx_runtime_.jsx("h5", {
                                                 className: "about-title",
-                                                children: t("howitwork.t12")
-                                            }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("p", {
-                                                children: t("howitwork.p14")
-                                            })
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                        className: "p-0",
-                                        children: [
-                                            /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("h5", {
-                                                className: "about-title",
-                                                children: t("howitwork.t13")
+                                                children: t("howitwork.t14")
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                                 children: t("howitwork.P15")

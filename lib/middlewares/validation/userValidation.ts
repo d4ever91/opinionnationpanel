@@ -44,6 +44,17 @@ const validateRegister = async (req, res, next) => {
     handleErrors(error,res);
     }
   };
+
+  const validateForgot = async (req, res, next) => {
+    try {
+      let schema = joi.object().keys({
+        email: joi.string().email({ tlds: { allow: false } }).required(),
+      });
+      await sendValidation(req,res, schema, next);
+    } catch (error) {
+    handleErrors(error,res);
+    }
+  };
   
 
-export  { validateLogin ,validateRegister };
+export  { validateForgot , validateLogin ,validateRegister };

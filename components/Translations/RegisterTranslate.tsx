@@ -21,7 +21,7 @@ export const RegisterTranslate: React.FC = () => {
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <RegisterForm />
           <Text style={{textAlign:'center'}} fontSize='md'>  {t('register.already')+' ?'}
-          <Link style={{color: '#F3BB45'}} onClick={()=>routeTo('/auth/login')}>
+          <Link style={{color: '#3A7EC6'}} onClick={()=>routeTo('/auth/login')}>
           {' '+t('register.login')}
           </Link>
           </Text>

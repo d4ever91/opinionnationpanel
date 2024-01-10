@@ -7,8 +7,9 @@ exports.modules = {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "_": () => (/* binding */ validateLogin),
-/* harmony export */   "p": () => (/* binding */ validateRegister)
+/* harmony export */   "Lq": () => (/* binding */ validateForgot),
+/* harmony export */   "_D": () => (/* binding */ validateLogin),
+/* harmony export */   "p3": () => (/* binding */ validateRegister)
 /* harmony export */ });
 /* harmony import */ var joi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8506);
 /* harmony import */ var joi__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(joi__WEBPACK_IMPORTED_MODULE_0__);
@@ -53,6 +54,20 @@ const validateRegister = async (req, res, next)=>{
             news: joi__WEBPACK_IMPORTED_MODULE_0___default().boolean().optional(),
             company: joi__WEBPACK_IMPORTED_MODULE_0___default().string().optional().empty(""),
             platform: joi__WEBPACK_IMPORTED_MODULE_0___default().string().optional()
+        });
+        await sendValidation(req, res, schema, next);
+    } catch (error) {
+        (0,_lib_middlewares_errors_handleErrorsApi__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(error, res);
+    }
+};
+const validateForgot = async (req, res, next)=>{
+    try {
+        let schema = joi__WEBPACK_IMPORTED_MODULE_0___default().object().keys({
+            email: joi__WEBPACK_IMPORTED_MODULE_0___default().string().email({
+                tlds: {
+                    allow: false
+                }
+            }).required()
         });
         await sendValidation(req, res, schema, next);
     } catch (error) {

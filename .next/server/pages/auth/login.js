@@ -211,6 +211,19 @@ const LoginTranslate = ()=>{
                     maxW: "md",
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Auth_Login_LoginForm__WEBPACK_IMPORTED_MODULE_2__/* .LoginForm */ .U, {}),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Text, {
+                            style: {
+                                textAlign: "center"
+                            },
+                            fontSize: "md",
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                                style: {
+                                    color: "#3A7EC6"
+                                },
+                                onClick: ()=>routeTo("/auth/forgot"),
+                                children: " " + t("login.forget")
+                            })
+                        }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Text, {
                             style: {
                                 textAlign: "center"
@@ -219,7 +232,9 @@ const LoginTranslate = ()=>{
                             children: [
                                 t("login.account"),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                                    color: "blue.500",
+                                    style: {
+                                        color: "#3A7EC6"
+                                    },
                                     onClick: ()=>routeTo("/auth/register"),
                                     children: " " + t("login.register")
                                 })

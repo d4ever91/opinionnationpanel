@@ -5,6 +5,13 @@ exports.id = 1025;
 exports.ids = [1025];
 exports.modules = {
 
+/***/ 2139:
+/***/ ((module) => {
+
+module.exports = require("@sendgrid/mail");
+
+/***/ }),
+
 /***/ 5888:
 /***/ ((module) => {
 
@@ -16,13 +23,6 @@ module.exports = require("ajv");
 /***/ ((module) => {
 
 module.exports = require("mongoose");
-
-/***/ }),
-
-/***/ 5711:
-/***/ ((module) => {
-
-module.exports = require("sib-api-v3-sdk");
 
 /***/ }),
 
@@ -63,7 +63,7 @@ handler.post(async (req, res)=>{
     try {
         await (0,_lib_middlewares_db_mongodb__WEBPACK_IMPORTED_MODULE_2__/* .connect */ .$j)();
         var result = {};
-        await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_5__/* .sendInblue */ .H)(req.body);
+        await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_5__/* .sendInblue */ .HF)(req.body);
         return (0,_lib_utils_response__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z)(req, res, _lib_utils_statusCodes__WEBPACK_IMPORTED_MODULE_3__/* ["default"].SUCCESS */ .Z.SUCCESS, "", "Email send successfully", result);
     } catch (err) {
         (0,_lib_middlewares_errors_handleErrorsApi__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z)(err, res);

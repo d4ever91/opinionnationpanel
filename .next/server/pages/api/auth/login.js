@@ -98,7 +98,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib
 
 
 const handler = (0,next_connect__WEBPACK_IMPORTED_MODULE_5__["default"])(_lib_middlewares_server__WEBPACK_IMPORTED_MODULE_4__/* .ncOpts */ .z);
-handler.use(_lib_middlewares_validation_userValidation__WEBPACK_IMPORTED_MODULE_10__/* .validateLogin */ ._);
+handler.use(_lib_middlewares_validation_userValidation__WEBPACK_IMPORTED_MODULE_10__/* .validateLogin */ ._D);
 handler.post(async (req, res)=>{
     try {
         await (0,_lib_middlewares_db_mongodb__WEBPACK_IMPORTED_MODULE_3__/* .connect */ .$j)();

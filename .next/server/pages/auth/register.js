@@ -272,7 +272,7 @@ const RegisterTranslate = ()=>{
                                 t("register.already") + " ?",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
                                     style: {
-                                        color: "#F3BB45"
+                                        color: "#3A7EC6"
                                     },
                                     onClick: ()=>routeTo("/auth/login"),
                                     children: " " + t("register.login")
@@ -299,7 +299,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "me": () => (/* binding */ authRegister)
 /* harmony export */ });
-/* unused harmony exports AUTH_API_PATH, authLogin, getAdminInfo, checkTokenValidity, renewalToken */
+/* unused harmony exports AUTH_API_PATH, authLogin, authForget, getAdminInfo, checkTokenValidity, renewalToken */
 /* harmony import */ var _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(921);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__]);
 _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
@@ -307,6 +307,7 @@ _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependen
 const AUTH_API_PATH = {
     LOGIN: "/auth/login",
     REGISTER: "/auth/register",
+    FORGOT: "/auth/forgot",
     CHECK_TOKEN: "/auth/check",
     RENEWAL_TOKEN: "/auth/renewal",
     ADMIN: "/auth/admin"
@@ -316,6 +317,9 @@ function authLogin(body) {
 }
 function authRegister(body) {
     return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post(AUTH_API_PATH.REGISTER, body).then((response)=>response.result);
+}
+function authForget(body) {
+    return nodepress.post(AUTH_API_PATH.FORGOT, body).then((response)=>response.result);
 }
 function getAdminInfo() {
     return nodepress.get(AUTH_API_PATH.ADMIN).then((response)=>response.result);

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && git add . && git commit -am 'sadf' && git push origin master",
+    "build": "next build && next export && git add . && git commit -am 'sadf' && git push origin main",
     "start": "next start",
     "lint": "next lint",
     "live": "export NODE_ENV=live && export NODE_PORT=3000 && pm2 start next dev --wolf 3000"
@@ -16,6 +16,7 @@
     "@iconify/icons-ic": "^1.2.10",
     "@iconify/react": "^4.0.0",
     "@reduxjs/toolkit": "^1.8.6",
+    "@sendgrid/mail": "^8.1.0",
     "@sendinblue/client": "^3.3.1",
     "@types/slug": "^5.0.3",
     "axios": "^1.1.3",

@@ -4,6 +4,7 @@ import nodepress from '@/lib/services/nodepress'
 export const AUTH_API_PATH = {
   LOGIN: '/auth/login',
   REGISTER: '/auth/register',
+  FORGOT: '/auth/forgot',
   CHECK_TOKEN: '/auth/check',
   RENEWAL_TOKEN: '/auth/renewal',
   ADMIN: '/auth/admin',
@@ -19,6 +20,10 @@ export  function authLogin( body:Auth) {
 
 export function authRegister(body: Auth) {
   return nodepress.post<Auth>(AUTH_API_PATH.REGISTER,body).then((response) => response.result)
+}
+
+export function authForget(body: Auth) {
+  return nodepress.post<Auth>(AUTH_API_PATH.FORGOT,body).then((response) => response.result)
 }
 
 export function getAdminInfo() {
