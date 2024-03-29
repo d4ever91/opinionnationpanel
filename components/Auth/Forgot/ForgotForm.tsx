@@ -15,12 +15,11 @@ export const ForgotForm: React.FC = () => {
   const { showToast } = useToast()
 
   const submitLogin = async (values: Auth) => {
-
+    
   }
 
   const SchemaLoginForm = yup.object().shape({
     email: yup.string().email().required('Email must be valid'),
-    password: yup.string().min(7, 'Password must be more than 6 character').required(),
   })
 
   return (
