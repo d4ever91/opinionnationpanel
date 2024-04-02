@@ -16,7 +16,6 @@ export interface Contact {
     subject?: string,
     message: string,
 }
-
 export const Contact: React.FC = () => {
 
     const [selected, setSelected] = useState("US");
