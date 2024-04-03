@@ -75,7 +75,7 @@ const SidebarContent = ({ onClose, data, modules, ...rest }: SidebarProps) => {
         <CloseButton style={{ color: 'white', marginTop: 20, marginLeft: 10 }} display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       <Flex p="5" borderBottom="1px" alignItems="center" justifyContent="center">
-        <img width="120" src="/images/logo.png" />
+        <img width="120" src="/images/log.png" />
       </Flex>
       {modules.map((module: Module) => (
         <NavItem key={module.name} icon={module.icon} route={module.route} >

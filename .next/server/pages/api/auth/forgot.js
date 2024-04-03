@@ -5,13 +5,6 @@ exports.id = 7929;
 exports.ids = [7929];
 exports.modules = {
 
-/***/ 2139:
-/***/ ((module) => {
-
-module.exports = require("@sendgrid/mail");
-
-/***/ }),
-
 /***/ 5888:
 /***/ ((module) => {
 
@@ -37,6 +30,13 @@ module.exports = require("joi");
 /***/ ((module) => {
 
 module.exports = require("mongoose");
+
+/***/ }),
+
+/***/ 5711:
+/***/ ((module) => {
+
+module.exports = require("sib-api-v3-sdk");
 
 /***/ }),
 

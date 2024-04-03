@@ -1,11 +1,11 @@
 import { BASE_PATH } from "../config/config";
 
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-//SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.SENDINBLUE_API_KEY;
-//var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+var SibApiV3Sdk = require('sib-api-v3-sdk');
+var defaultClient = SibApiV3Sdk.ApiClient.instance;
+var apiKey = defaultClient.authentications['api-key'];
+apiKey.apiKey =process.env.SENDINBLUE_API_KEY;
+var sgMail = new SibApiV3Sdk.TransactionalEmailsApi();
 export const sendInblue = (input) => {
-  
   const msg = {
     sender: { email:process.env.FROM_EMAIL, name: process.env.FROM_NAME },
     to: [{ name: process.env.FROM_NAME, email:  process.env.FROM_EMAIL }],
@@ -26,9 +26,12 @@ export const sendVerificationLink = (input) => {
     subject: "Opinion Nation Verification Link",
     htmlContent: `Hi ${input.name} , <br/> <br/> Here is the verification link for registration . <br/> <br/> ${BASE_PATH}/auth/verification?token=${input.emailToken}`,
 };
+console.log(msg)
 sgMail.sendTransacEmail(msg).then(function(data) {
+  console.log(data)
       return true;
     }, function(error) {
+      console.log(error)
       return false;
     });
 }

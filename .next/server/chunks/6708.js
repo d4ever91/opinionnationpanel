@@ -13,10 +13,11 @@ exports.modules = {
 /* harmony export */ });
 /* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1845);
 
-const sgMail = __webpack_require__(2139);
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-//SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.SENDINBLUE_API_KEY;
-//var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+var SibApiV3Sdk = __webpack_require__(5711);
+var defaultClient = SibApiV3Sdk.ApiClient.instance;
+var apiKey = defaultClient.authentications["api-key"];
+apiKey.apiKey = process.env.SENDINBLUE_API_KEY;
+var sgMail = new SibApiV3Sdk.TransactionalEmailsApi();
 const sendInblue = (input)=>{
     const msg = {
         sender: {
@@ -53,9 +54,12 @@ const sendVerificationLink = (input)=>{
         subject: "Opinion Nation Verification Link",
         htmlContent: `Hi ${input.name} , <br/> <br/> Here is the verification link for registration . <br/> <br/> ${_config_config__WEBPACK_IMPORTED_MODULE_0__/* .BASE_PATH */ .GW}/auth/verification?token=${input.emailToken}`
     };
+    console.log(msg);
     sgMail.sendTransacEmail(msg).then(function(data) {
+        console.log(data);
         return true;
     }, function(error) {
+        console.log(error);
         return false;
     });
 };

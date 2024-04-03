@@ -71,7 +71,7 @@ export const VerificationForm=({ token }:any) => {
             </InputGroup>
             <FormErrorMessage>{formikProps.errors.cpassword}</FormErrorMessage>
           </FormControl>
-          <Button isLoading={isLoading} color="white" type="submit" style={{ backgroundColor: '#F3BB45' }} mt={4} width="full" size="lg" variant='solid'>
+          <Button isLoading={isLoading} color="white" type="submit" style={{ backgroundColor: '#3A7EC6' }} mt={4} width="full" size="lg" variant='solid'>
             Save
           </Button>
         </Form>

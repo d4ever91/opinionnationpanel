@@ -1486,7 +1486,7 @@ const SidebarContent = ({ onClose , data , modules , ...rest })=>{
                 justifyContent: "center",
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                     width: "120",
-                    src: "/images/logo.png"
+                    src: "/images/log.png"
                 })
             }),
             modules.map((module)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(NavItem, {
