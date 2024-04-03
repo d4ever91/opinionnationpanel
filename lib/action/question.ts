@@ -8,7 +8,7 @@ export const QUESTION_API_PATH = {
 }
 export const getQuestionList = (id): AppThunk => async dispatch => {{
     return nodepress.get<Question>(QUESTION_API_PATH.GET+`/${id}`).then((response) => {
-      var countries: any = response.result;
+      var countries: any = response.result ? response.result : response;
        dispatch(get(countries));
     });
   }

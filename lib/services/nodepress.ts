@@ -1,6 +1,5 @@
 import  { useEffect } from 'react';
 import axios, { AxiosInstance } from 'axios'
-import { API_URL } from '@/lib/config/config'
 import token from './token'
 import { useToast } from '@/lib/hooks/useToast';
 import { useRouter } from 'next/router';
@@ -40,7 +39,6 @@ export interface HTTPResult<T = any> {
   message: string
   result: T
 }
-console.log(API_URL)
 const nodepress = axios.create({
   baseURL: '/api',
 })
@@ -56,10 +54,10 @@ const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
   const router = useRouter();
   useEffect(() => {
     nodepress.interceptors.response.use(
-      (response) => {
-        if (response.data.code === HTTPCode.SUCCESS) {
-          if(response.data.redirect){
-           router.push(response.data.redirect);
+      (response:any) => {
+        if (response && response.data && (response.data.code === HTTPCode.SUCCESS)) {
+          if(response.data.redirect ){
+           return router.push(response.data.redirect);
           }
           if(response.data.message) {
           showToast({
@@ -70,6 +68,9 @@ const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
         }
           return Promise.resolve(response.data)
         } else {
+          if(response && response.result){
+            return Promise.resolve(response.result)
+          }
           return Promise.reject(response)
         }
       },

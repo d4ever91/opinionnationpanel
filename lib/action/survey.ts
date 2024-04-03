@@ -16,7 +16,7 @@ export const getSurveys = (filters:any): AppThunk => async dispatch => {
   {
     dispatch(load(true));
     return nodepress.post<Survey>(SURVEY_API_PATH.GET,filters).then((response) => {
-      var result: any = response.result;
+      var result: any = response.result ? response.result : response;
       dispatch(get(result))
     }).catch((e) => {
       dispatch(load(false));
@@ -28,7 +28,7 @@ export const getSurveysList = (): AppThunk => async dispatch => {
   {
     dispatch(load(true));
     return nodepress.get<Survey>(SURVEY_API_PATH.GET).then((response) => {
-      var result: any = response.result;
+      var result: any = response.result ? response.result : response;
       dispatch(get(result))
     }).catch((e) => {
       dispatch(load(false));
@@ -40,7 +40,7 @@ export const getSurvey = (id:string): AppThunk => async dispatch => {
   {
     dispatch(load(true));
     return nodepress.get<Survey>(SURVEY_API_PATH.GETONE+'/'+id).then((response) => {
-      var result: Survey = response.result;
+      var result: any = response.result ? response.result : response;
       dispatch(single( result ))
     }).catch((e) => {
       dispatch(load(false));
@@ -52,7 +52,7 @@ export const addSurvey = (user: Survey): AppThunk => async dispatch => {
   {
     dispatch(load(true));
     return nodepress.post<Survey>(SURVEY_API_PATH.CREATE, user).then((response) => {
-      var survey: Survey = response.result;
+      var survey: any = response.result ? response.result : response;
       dispatch(add(survey));
     }).catch((e) => {
       dispatch(load(false));
@@ -64,7 +64,7 @@ export const updateSurvey = (id:string,user: Survey): AppThunk => async dispatch
   {
     dispatch(load(true));
     return nodepress.put<Survey>(SURVEY_API_PATH.UPDATE+'/'+id, user).then((response) => {
-      var survey: Survey = response.result;
+      var survey: any = response.result ? response.result : response;
       dispatch(update(survey));
     }).catch((e) => {
       dispatch(load(false));
@@ -76,7 +76,7 @@ export const removeSurvey = (_id: string): AppThunk => async dispatch => {
   {
     dispatch(load(true));
     return nodepress.delete<Survey>(SURVEY_API_PATH.REMOVE + '/' + _id).then((response) => {
-      var survey: Survey = response.result;
+      var survey: any = response.result ? response.result : response;
       dispatch(remove(survey));
     }).catch((e) => {
       dispatch(load(false));

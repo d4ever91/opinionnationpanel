@@ -1717,13 +1717,12 @@ _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependen
 
 
 const AUTH_API_PATH = {
-    GET: "/app/module",
-    CREATE: "/app/module"
+    GET: "/app/module"
 };
 const getModules = ()=>async (dispatch)=>{
         {
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(AUTH_API_PATH.GET).then((response)=>{
-                var modules = response.result;
+                var modules = response.result ? response.result : response;
                 dispatch((0,_lib_store_moduleSlice__WEBPACK_IMPORTED_MODULE_1__/* .get */ .U)({
                     modules
                 }));
@@ -1733,6 +1732,24 @@ const getModules = ()=>async (dispatch)=>{
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 96:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "GW": () => (/* binding */ BASE_PATH)
+/* harmony export */ });
+/* unused harmony exports API_URL, FROM_EMAIL, FROM_NAME, MONGODB_URI */
+const API_URL = "https://app.opinion-nation.com/api";
+const BASE_PATH = "https://app.opinion-nation.com";
+// export const API_URL ="http://localhost:3000/api"
+// export const BASE_PATH="http://localhost:3000"
+const FROM_EMAIL = "info@opinion-nation.com";
+const FROM_NAME = "Opinion Nation";
+const MONGODB_URI = "mongodb+srv://event:5UscXm8Ub6w8QcvB@cluster0.bqzhq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 
 /***/ }),
 

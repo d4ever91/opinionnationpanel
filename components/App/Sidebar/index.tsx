@@ -14,7 +14,7 @@ import {  BASE_PATH } from '@/lib/config/config';
 export default function SimpleSidebar({ children }: { children: ReactNode }) {
 
   const { data } = useSession();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { modules } = useSelector((state: RootState) => state.module);
 
@@ -23,9 +23,11 @@ export default function SimpleSidebar({ children }: { children: ReactNode }) {
   }, [])
 
   const getLinkItems = async () => {
-    await dispatch<any>(getModules());
+   await dispatch<any>(getModules());
   }
   
+
+
   return (
     <Box minH="100vh">
       <SidebarContent

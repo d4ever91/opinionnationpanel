@@ -3,25 +3,6 @@ exports.id = 921;
 exports.ids = [921];
 exports.modules = {
 
-/***/ 96:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "GW": () => (/* binding */ BASE_PATH),
-/* harmony export */   "T5": () => (/* binding */ API_URL)
-/* harmony export */ });
-/* unused harmony exports FROM_EMAIL, FROM_NAME, MONGODB_URI */
-const API_URL = "https://app.opinion-nation.com/api";
-const BASE_PATH = "https://app.opinion-nation.com";
-// export const API_URL ="http://localhost:3000/api"
-// export const BASE_PATH="http://localhost:3000"
-const FROM_EMAIL = "info@opinion-nation.com";
-const FROM_NAME = "Opinion Nation";
-const MONGODB_URI = "mongodb+srv://event:5UscXm8Ub6w8QcvB@cluster0.bqzhq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
-
-/***/ }),
-
 /***/ 9465:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -68,14 +49,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9648);
-/* harmony import */ var _lib_config_config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(96);
 /* harmony import */ var _token__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7177);
 /* harmony import */ var _lib_hooks_useToast__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9465);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1853);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_1__, _lib_hooks_useToast__WEBPACK_IMPORTED_MODULE_3__]);
 ([axios__WEBPACK_IMPORTED_MODULE_1__, _lib_hooks_useToast__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
-
 
 
 
@@ -98,7 +77,6 @@ var HTTPStatus;
     HTTPStatus["Error"] = "error";
     HTTPStatus["Success"] = "success";
 })(HTTPStatus || (HTTPStatus = {}));
-console.log(_lib_config_config__WEBPACK_IMPORTED_MODULE_5__/* .API_URL */ .T5);
 const nodepress = axios__WEBPACK_IMPORTED_MODULE_1__["default"].create({
     baseURL: "/api"
 });
@@ -107,9 +85,9 @@ const AxiosInterceptor = ({ children  })=>{
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
         nodepress.interceptors.response.use((response)=>{
-            if (response.data.code === HTTPCode.SUCCESS) {
+            if (response && response.data && response.data.code === HTTPCode.SUCCESS) {
                 if (response.data.redirect) {
-                    router.push(response.data.redirect);
+                    return router.push(response.data.redirect);
                 }
                 if (response.data.message) {
                     showToast({
@@ -120,6 +98,9 @@ const AxiosInterceptor = ({ children  })=>{
                 }
                 return Promise.resolve(response.data);
             } else {
+                if (response && response.result) {
+                    return Promise.resolve(response.result);
+                }
                 return Promise.reject(response);
             }
         }, (error)=>{

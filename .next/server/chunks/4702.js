@@ -35,7 +35,7 @@ const getUsers = (filters)=>async (dispatch)=>{
         {
             dispatch(load(true));
             return nodepress.post(USER_API_PATH.GET, filters).then((response)=>{
-                var result = response.result;
+                var result = response.result ? response.result : response;
                 dispatch(get(result));
             }).catch((e)=>{
                 dispatch(load(false));
@@ -46,7 +46,7 @@ const getUsersList = ()=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(USER_API_PATH.GET).then((response)=>{
-                var result = response.result;
+                var result = response.result ? response.result : response;
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .get */ .U2)(result));
             }).catch((e)=>{
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
@@ -57,7 +57,7 @@ const getUser = (id)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(USER_API_PATH.GETONE + "/" + id).then((response)=>{
-                var result = response.result;
+                var result = response.result ? response.result : response;
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .single */ .Zr)(result));
             }).catch((e)=>{
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
@@ -68,7 +68,7 @@ const getUserByToken = (token)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(USER_API_PATH.GET_TOKEN + "?token=" + token).then((response)=>{
-                var result = response.result;
+                var result = response.result ? response.result : response;
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .single */ .Zr)(result));
             }).catch((e)=>{
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
@@ -79,7 +79,7 @@ const addUser = (user)=>async (dispatch)=>{
         {
             dispatch(load(true));
             return nodepress.post(USER_API_PATH.CREATE, user).then((response)=>{
-                var user = response.result;
+                var user = response.result ? response.result : response;
                 dispatch(add(user));
             }).catch((e)=>{
                 dispatch(load(false));
@@ -90,7 +90,7 @@ const updateUser = (id, user)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].put */ .ZP.put(USER_API_PATH.UPDATE + "/" + id, user).then((response)=>{
-                var user = response.result;
+                var user = response.result ? response.result : response;
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .update */ .Vx)(user));
             }).catch((e)=>{
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
@@ -101,7 +101,7 @@ const updateUserPassword = (code, user)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].put */ .ZP.put(USER_API_PATH.UPDATE_PASSWORD + "/" + code, user).then((response)=>{
-                var user = response.result;
+                var user = response.result ? response.result : response;
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .update */ .Vx)(user));
             }).catch((e)=>{
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
@@ -112,7 +112,7 @@ const removeUser = (_id)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"]["delete"] */ .ZP["delete"](USER_API_PATH.REMOVE + "/" + _id).then((response)=>{
-                var user = response.result;
+                var user = response.result ? response.result : response;
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .remove */ .Od)(user));
             }).catch((e)=>{
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));

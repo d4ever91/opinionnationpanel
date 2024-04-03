@@ -30,7 +30,7 @@ const getSurveys = (filters)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_surveySlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post(SURVEY_API_PATH.GET, filters).then((response)=>{
-                var result = response.result;
+                var result = response.result ? response.result : response;
                 dispatch((0,_lib_store_surveySlice__WEBPACK_IMPORTED_MODULE_1__/* .get */ .U2)(result));
             }).catch((e)=>{
                 dispatch((0,_lib_store_surveySlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
@@ -41,7 +41,7 @@ const getSurveysList = ()=>async (dispatch)=>{
         {
             dispatch(load(true));
             return nodepress.get(SURVEY_API_PATH.GET).then((response)=>{
-                var result = response.result;
+                var result = response.result ? response.result : response;
                 dispatch(get(result));
             }).catch((e)=>{
                 dispatch(load(false));
@@ -52,7 +52,7 @@ const getSurvey = (id)=>async (dispatch)=>{
         {
             dispatch(load(true));
             return nodepress.get(SURVEY_API_PATH.GETONE + "/" + id).then((response)=>{
-                var result = response.result;
+                var result = response.result ? response.result : response;
                 dispatch(single(result));
             }).catch((e)=>{
                 dispatch(load(false));
@@ -63,7 +63,7 @@ const addSurvey = (user)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_surveySlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post(SURVEY_API_PATH.CREATE, user).then((response)=>{
-                var survey = response.result;
+                var survey = response.result ? response.result : response;
                 dispatch((0,_lib_store_surveySlice__WEBPACK_IMPORTED_MODULE_1__/* .add */ .IH)(survey));
             }).catch((e)=>{
                 dispatch((0,_lib_store_surveySlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
@@ -74,7 +74,7 @@ const updateSurvey = (id, user)=>async (dispatch)=>{
         {
             dispatch(load(true));
             return nodepress.put(SURVEY_API_PATH.UPDATE + "/" + id, user).then((response)=>{
-                var survey = response.result;
+                var survey = response.result ? response.result : response;
                 dispatch(update(survey));
             }).catch((e)=>{
                 dispatch(load(false));
@@ -85,7 +85,7 @@ const removeSurvey = (_id)=>async (dispatch)=>{
         {
             dispatch(load(true));
             return nodepress.delete(SURVEY_API_PATH.REMOVE + "/" + _id).then((response)=>{
-                var survey = response.result;
+                var survey = response.result ? response.result : response;
                 dispatch(remove(survey));
             }).catch((e)=>{
                 dispatch(load(false));

@@ -1,32 +1,27 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 import withAuth from '@/components/Route/WithAuth';
 import { Seo } from '@/layouts/Seo';
 import { IColumnType, TableLayout } from '@/components/App/Table/TableLayout';
-import { Flex, Box, Tabs, Text, Link, TabPanels, Tab, TabPanel, TabList, useDisclosure, Heading, Button, Grid } from '@chakra-ui/react';
-import { User } from '@/lib/constants/user';
+import { Flex, Box, Tabs, Text, Link,  useDisclosure, Heading, Button, Grid } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store/rootReducer';
 import { removeUser } from '@/lib/action/user';
 import PageHeader from '@/components/App/Header/PageHeader';
 import { Icon } from '@iconify/react';
 import SpinnerLayout from '@/components/Common/SpinnerLayout';
-import { FormInputType } from '@/components/App/Form/FormLayout';
 import DialogLayout from '@/components/Common/DialogLayout';
 import { useRouter } from 'next/router';
-import { getSurveys } from '@/lib/action/survey';
 import { Survey, SurveyStatus } from '@/lib/constants/survey';
-import Image from 'next/image';
-import PageFooter from '@/components/App/Footer/Footer';
 
 export const DashboardList: React.FC = () => {
 
   const router = useRouter()
-  const [filters, setFilters] = useState<any>({});
   const dispatch = useDispatch();
 
-  const { isLoading, surveys, users, statuses, countries, meta } = useSelector((state: RootState) => state.survey);
+  const { isLoading, surveys, meta } = useSelector((state: RootState) => state.survey);
+
 
   const columns: IColumnType<Survey>[] = [
     {

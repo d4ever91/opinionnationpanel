@@ -25,7 +25,7 @@ const COUNTRY_API_PATH = {
 const getCategoriesList = ()=>async (dispatch)=>{
         {
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(COUNTRY_API_PATH.GET).then((response)=>{
-                var countries = response.result;
+                var countries = response.result ? response.result : response;
                 dispatch((0,_lib_store_categorySlice__WEBPACK_IMPORTED_MODULE_1__/* .get */ .U2)(countries));
             });
         }
@@ -33,7 +33,7 @@ const getCategoriesList = ()=>async (dispatch)=>{
 const getCategory = (id)=>async (dispatch)=>{
         {
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(COUNTRY_API_PATH.GET + `/${id}`).then((response)=>{
-                var category = response.result;
+                var category = response.result ? response.result : response;
                 dispatch((0,_lib_store_categorySlice__WEBPACK_IMPORTED_MODULE_1__/* .single */ .Zr)(category));
             });
         }

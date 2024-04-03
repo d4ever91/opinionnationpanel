@@ -16,7 +16,7 @@ const withAuth = (WrappedComponent) => {
         <SpinnerLayout />
       </ChakraProvider>;
     }
-    if (status == "authenticated") {
+    if (status == "authenticated" ) {
       return <ChakraProvider theme={customTheme}>
         <SimpleSidebar>
           <WrappedComponent {...props} />
