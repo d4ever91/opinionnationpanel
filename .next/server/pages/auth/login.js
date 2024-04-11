@@ -210,6 +210,16 @@ const LoginTranslate = ()=>{
                     w: "full",
                     maxW: "md",
                     children: [
+                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Text, {
+                            style: {
+                                textAlign: "center"
+                            },
+                            fontSize: "md",
+                            children: [
+                                " ",
+                                " " + t("login.text")
+                            ]
+                        }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Auth_Login_LoginForm__WEBPACK_IMPORTED_MODULE_2__/* .LoginForm */ .U, {}),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Text, {
                             style: {

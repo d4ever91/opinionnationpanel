@@ -31,7 +31,7 @@ const UserSchema: Schema = new Schema({
   uuid: { type: String, required: false },
   inviteCode: { type: String, required: false },
   emailToken: { type: String, required: false },
-  forgotToken: { type: String, required: false },
+  forgotToken: { type: String, required: false,default:"" },
   emailVerified: { type: Boolean, required: false ,default:false},
   platform: { type: String, required: false },
   provider: { type: String, required: false },

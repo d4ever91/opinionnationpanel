@@ -1667,6 +1667,7 @@ const withAuth = (WrappedComponent)=>{
     return (props)=>{
         const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
         const { status  } = (0,next_auth_react__WEBPACK_IMPORTED_MODULE_4__.useSession)();
+        console.log(status);
         if (status == "loading") {
             return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.ChakraProvider, {
                 theme: _lib_theme__WEBPACK_IMPORTED_MODULE_2__/* .customTheme */ .v,

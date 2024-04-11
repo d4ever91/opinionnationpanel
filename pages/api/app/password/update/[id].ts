@@ -13,7 +13,6 @@ handler.put(async (req, res) => {
   try {
     await connect();
     if(req.body.password) req.body.password = await bcrypt.hash( req.body.password, 10);
-    req.body.emailVerified=true;
     var user = await updateUserById(req.query.id , req.body);
     return sendResponse(req, res, statusCode.SUCCESS, "/auth/login", messages.USER_UPDATED_SUCCESSFULLY, user)
   }

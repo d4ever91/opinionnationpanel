@@ -8,6 +8,7 @@ export const USER_API_PATH = {
   GET: '/app/user',
   GETONE: '/app/user/get',
   GET_TOKEN: '/app/code',
+  GET_RESET_TOKEN: '/app/reset/code',
   CREATE: '/app/user/add',
   UPDATE: '/app/user/update',
   UPDATE_PASSWORD: '/app/password/update',
@@ -54,6 +55,17 @@ export const getUserByToken = (token:string): AppThunk => async dispatch => {
   {
     dispatch(load(true));
     return nodepress.get<User>(USER_API_PATH.GET_TOKEN+'?token='+token).then((response) => {
+      var result: any = response.result ? response.result : response;
+      dispatch(single(result))
+    }).catch((e) => {
+      dispatch(load(false));
+    });
+  }
+}
+export const getUserByResetToken = (token:string): AppThunk => async dispatch => {
+  {
+    dispatch(load(true));
+    return nodepress.get<User>(USER_API_PATH.GET_RESET_TOKEN+'?token='+token).then((response) => {
       var result: any = response.result ? response.result : response;
       dispatch(single(result))
     }).catch((e) => {

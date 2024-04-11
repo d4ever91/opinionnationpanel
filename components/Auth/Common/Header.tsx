@@ -2,13 +2,16 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next'
 import CountrySelector from '@/components/App/Country/CountrySelect';
+import { useSession } from "next-auth/react";
 
 export const Header: React.FC = () => {
 
     const router = useRouter();
     const { locale } = router;
+    const { status } = useSession();
     const [selected, setSelected] = useState(locale == 'en' ? 'US' : locale.toUpperCase() );
     const { t } = useTranslation();
+
 
 
     const changeHandler = (code) => {
@@ -69,9 +72,11 @@ export const Header: React.FC = () => {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="btn btn-singin" onClick={() => routeTo("/auth/register")}>
+                           {status != 'unauthenticated' ? <a className="btn btn-singin" onClick={() => routeTo("/app/dashboard")}>
+                                {t('header.dashboard')}
+                            </a>: <a className="btn btn-singin" onClick={() => routeTo("/auth/register")}>
                                 {t('header.register')}
-                            </a>
+                            </a>}
                         </li>
                         <li className="nav-item">
                             <CountrySelector

@@ -9,7 +9,7 @@ export const COUNTRY_API_PATH = {
 }
 export const getCountriesList = (): AppThunk => async dispatch => {{
     return nodepress.get<Country>(COUNTRY_API_PATH.GET).then((response) => {
-      var countries: any = response.result;
+      var countries: any = response.result ? response.result : response;
        dispatch(get(countries));
     });
   }

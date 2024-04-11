@@ -43,6 +43,7 @@ export const sendForgetLink = (input) => {
     subject: "Opinion Nation Password Reset Link",
     htmlContent: `Hi ${input.name} , <br/> <br/> Here is the password reset link . <br/> <br/> ${BASE_PATH}/auth/password-reset?token=${input.forgotToken}`,
 };
+console.log(msg)
 sgMail.sendTransacEmail(msg).then(function(data) {
       return true;
     }, function(error) {

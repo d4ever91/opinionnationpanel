@@ -106,13 +106,14 @@ handler.post(async (req, res)=>{
         var user = await (0,_lib_middlewares_mongo_service__WEBPACK_IMPORTED_MODULE_2__/* .findUserByEmail */ .GY)(req.body.email);
         if (!user) throw new _lib_middlewares_errors_errors__WEBPACK_IMPORTED_MODULE_0__/* .ValidationError */ .p8(_lib_utils_messages__WEBPACK_IMPORTED_MODULE_10__/* .messages.USER_NOT_EXISTS */ .s.USER_NOT_EXISTS);
         if (user && user.emailVerified) {
-            var forgetToken = await bcryptjs__WEBPACK_IMPORTED_MODULE_6___default().hash(req.body.firstName, 10);
-            req.body.forgetToken = forgetToken;
+            var forgotToken = await bcryptjs__WEBPACK_IMPORTED_MODULE_6___default().hash(req.body.email, 10);
+            req.body.forgotToken = forgotToken;
             var userData = await (0,_lib_middlewares_mongo_service__WEBPACK_IMPORTED_MODULE_2__/* .updateUserById */ .TP)(user._id, {
-                forgetToken
+                forgotToken
             });
+            console.log(userData);
             await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_11__/* .sendForgetLink */ .NN)({
-                forgetToken: userData.forgotToken,
+                forgotToken: userData.forgotToken,
                 name: userData.firstName + " " + userData.lastName,
                 email: userData.email
             });
@@ -122,7 +123,7 @@ handler.post(async (req, res)=>{
         req.body.uuid = uuid;
         var data = await (0,_lib_middlewares_mongo_service__WEBPACK_IMPORTED_MODULE_2__/* .insertUser */ ._Y)(req.body);
         if (user) await (0,_lib_services_emailService__WEBPACK_IMPORTED_MODULE_11__/* .sendForgetLink */ .NN)({
-            forgetToken: data.forgotToken,
+            forgotToken: data.forgotToken,
             name: data.firstName + " " + data.lastName,
             email: data.email
         });

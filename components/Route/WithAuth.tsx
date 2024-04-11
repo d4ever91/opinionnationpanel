@@ -11,6 +11,7 @@ const withAuth = (WrappedComponent) => {
   return (props) => {
     const router = useRouter();
     const { status } = useSession();
+    console.log(status)
     if (status == "loading") {
       return <ChakraProvider theme={customTheme}>
         <SpinnerLayout />

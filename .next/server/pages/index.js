@@ -27,7 +27,10 @@ var external_next_i18next_ = __webpack_require__(1377);
 var router_ = __webpack_require__(1853);
 // EXTERNAL MODULE: ./components/App/Country/CountrySelect.tsx
 var CountrySelect = __webpack_require__(6215);
+// EXTERNAL MODULE: external "next-auth/react"
+var react_ = __webpack_require__(1649);
 ;// CONCATENATED MODULE: ./components/Translations/HomeTranslate.tsx
+
 
 
 
@@ -36,6 +39,7 @@ var CountrySelect = __webpack_require__(6215);
 const HomeTranslate = ()=>{
     const router = (0,router_.useRouter)();
     const { locale  } = router;
+    const { status  } = (0,react_.useSession)();
     const { 0: selected , 1: setSelected  } = (0,external_react_.useState)(locale == "en" ? "US" : locale.toUpperCase());
     const { t  } = (0,external_next_i18next_.useTranslation)();
     const changeHandler = (code)=>{
@@ -135,7 +139,11 @@ const HomeTranslate = ()=>{
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("li", {
                                                 className: "nav-item",
-                                                children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                                children: status != "unauthenticated" ? /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                                    className: "btn btn-singin",
+                                                    onClick: ()=>routeTo("/app/dashboard"),
+                                                    children: t("header.dashboard")
+                                                }) : /*#__PURE__*/ jsx_runtime_.jsx("a", {
                                                     className: "btn btn-singin",
                                                     onClick: ()=>routeTo("/auth/register"),
                                                     children: t("header.register")
@@ -664,6 +672,13 @@ async function getStaticProps({ locale  }) {
     };
 }
 
+
+/***/ }),
+
+/***/ 1649:
+/***/ ((module) => {
+
+module.exports = require("next-auth/react");
 
 /***/ }),
 

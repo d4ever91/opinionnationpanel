@@ -21,12 +21,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _lib_action_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7238);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6022);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8930);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_i18next__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1377);
-/* harmony import */ var next_i18next__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_i18next__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8930);
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_i18next__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1377);
+/* harmony import */ var next_i18next__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_i18next__WEBPACK_IMPORTED_MODULE_6__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_action_auth__WEBPACK_IMPORTED_MODULE_4__]);
 _lib_action_auth__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -36,13 +34,14 @@ _lib_action_auth__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.
 
 
 
-
 const RegisterForm = ()=>{
-    const { t  } = (0,next_i18next__WEBPACK_IMPORTED_MODULE_7__.useTranslation)();
-    const { isLoading  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)((state)=>state.loading);
+    const { t  } = (0,next_i18next__WEBPACK_IMPORTED_MODULE_6__.useTranslation)();
+    const [isLoading, setIsLoading] = react__WEBPACK_IMPORTED_MODULE_3___default().useState(false);
     const submitForm = async (values, resetForm)=>{
+        setIsLoading(true);
         await (0,_lib_action_auth__WEBPACK_IMPORTED_MODULE_4__/* .authRegister */ .me)(values);
         resetForm();
+        setIsLoading(false);
     };
     const SchemaLoginForm = yup__WEBPACK_IMPORTED_MODULE_2__.object().shape({
         firstName: yup__WEBPACK_IMPORTED_MODULE_2__.string().trim().required("First Name is required"),
@@ -69,78 +68,79 @@ const RegisterForm = ()=>{
         children: (formikProps)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(formik__WEBPACK_IMPORTED_MODULE_1__.Form, {
                 onSubmit: formikProps.handleSubmit,
                 children: [
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormControl, {
                         isInvalid: formikProps.errors.firstName && formikProps.touched.firstName,
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Input, {
                                 ...formikProps.getFieldProps("firstName"),
                                 type: "text",
                                 placeholder: t("register.firstName"),
                                 size: "lg"
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormErrorMessage, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormErrorMessage, {
                                 children: formikProps.errors.firstName
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormControl, {
                         mt: 4,
                         isInvalid: formikProps.errors.lastName && formikProps.touched.lastName,
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Input, {
                                 ...formikProps.getFieldProps("lastName"),
                                 type: "text",
                                 placeholder: t("register.lastName"),
                                 size: "lg"
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormErrorMessage, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormErrorMessage, {
                                 children: formikProps.errors.lastName
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormControl, {
                         mt: 4,
                         isInvalid: formikProps.errors.email && formikProps.touched.email,
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Input, {
                                 ...formikProps.getFieldProps("email"),
                                 type: "email",
                                 placeholder: t("register.emai"),
                                 size: "lg"
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormErrorMessage, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormErrorMessage, {
                                 children: formikProps.errors.email
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormControl, {
                         mt: 4,
                         isInvalid: formikProps.errors.company && formikProps.touched.company,
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Input, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Input, {
                                 ...formikProps.getFieldProps("company"),
                                 type: "text",
                                 placeholder: t("register.company") + "(Optional)",
                                 size: "lg"
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormErrorMessage, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormErrorMessage, {
                                 children: formikProps.errors.company
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormControl, {
                         mt: 4,
                         isInvalid: formikProps.errors.terms && formikProps.touched.terms,
                         children: [
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Checkbox, {
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Checkbox, {
                                 name: "terms",
+                                defaultChecked: formikProps.values.terms,
                                 checked: formikProps.values.terms,
                                 onChange: formikProps.handleChange,
                                 size: "md",
                                 children: [
                                     t("register.policy1"),
                                     " ",
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
                                         style: {
                                             color: "#3A7EC6"
                                         },
@@ -148,7 +148,7 @@ const RegisterForm = ()=>{
                                         children: t("register.policy2")
                                     }),
                                     t("register.policy3"),
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
                                         style: {
                                             color: "#3A7EC6"
                                         },
@@ -157,30 +157,30 @@ const RegisterForm = ()=>{
                                     })
                                 ]
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormErrorMessage, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormErrorMessage, {
                                 children: formikProps.errors.terms
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormControl, {
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormControl, {
                         mt: 4,
                         isInvalid: formikProps.errors.news && formikProps.touched.news,
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Checkbox, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Checkbox, {
                                 name: "news",
                                 checked: formikProps.values.news,
                                 onChange: formikProps.handleChange,
                                 size: "md",
                                 children: t("register.news")
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.FormErrorMessage, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.FormErrorMessage, {
                                 children: formikProps.errors.news
                             })
                         ]
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Button, {
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Button, {
                         isLoading: isLoading,
-                        isDisabled: !formikProps.values.terms || !formikProps.values.news,
+                        isDisabled: !formikProps.values.terms,
                         color: "white",
                         type: "submit",
                         style: {
@@ -286,50 +286,6 @@ const RegisterTranslate = ()=>{
     });
 };
 /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((0,_components_Route_WithoutAuth__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(RegisterTranslate));
-
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 7238:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "me": () => (/* binding */ authRegister)
-/* harmony export */ });
-/* unused harmony exports AUTH_API_PATH, authLogin, authForget, getAdminInfo, checkTokenValidity, renewalToken */
-/* harmony import */ var _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(921);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__]);
-_lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
-const AUTH_API_PATH = {
-    LOGIN: "/auth/login",
-    REGISTER: "/auth/register",
-    FORGOT: "/auth/forgot",
-    CHECK_TOKEN: "/auth/check",
-    RENEWAL_TOKEN: "/auth/renewal",
-    ADMIN: "/auth/admin"
-};
-function authLogin(body) {
-    return nodepress.post(AUTH_API_PATH.LOGIN, body).then((response)=>response.result);
-}
-function authRegister(body) {
-    return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post(AUTH_API_PATH.REGISTER, body).then((response)=>response.result);
-}
-function authForget(body) {
-    return nodepress.post(AUTH_API_PATH.FORGOT, body).then((response)=>response.result);
-}
-function getAdminInfo() {
-    return nodepress.get(AUTH_API_PATH.ADMIN).then((response)=>response.result);
-}
-function checkTokenValidity() {
-    return nodepress.post(AUTH_API_PATH.CHECK_TOKEN).then((response)=>response.result);
-}
-function renewalToken() {
-    return nodepress.post(AUTH_API_PATH.RENEWAL_TOKEN).then((response)=>response.result);
-}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -447,13 +403,6 @@ module.exports = require("react-flags-select");
 
 /***/ }),
 
-/***/ 6022:
-/***/ ((module) => {
-
-module.exports = require("react-redux");
-
-/***/ }),
-
 /***/ 997:
 /***/ ((module) => {
 
@@ -489,7 +438,7 @@ module.exports = import("react-hot-toast");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [5500,8137,921,6215,5562,9724], () => (__webpack_exec__(3380)));
+var __webpack_exports__ = __webpack_require__.X(0, [5500,8137,921,6215,5562,9724,7238], () => (__webpack_exec__(3380)));
 module.exports = __webpack_exports__;
 
 })();

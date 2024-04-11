@@ -20,6 +20,7 @@ export const LoginTranslate: React.FC = () => {
       <Seo title="Login" />
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
+        <Text style={{textAlign:'center'}} fontSize='md'> {' '+t('login.text')}</Text>
           <LoginForm />
           <Text style={{textAlign:'center'}} fontSize='md'>
           <Link style={{color: '#3A7EC6'}} onClick={()=>routeTo('/auth/forgot')}>

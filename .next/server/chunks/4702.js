@@ -12,6 +12,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "Nq": () => (/* binding */ updateUser),
 /* harmony export */   "PR": () => (/* binding */ getUser),
 /* harmony export */   "TO": () => (/* binding */ getUserByToken),
+/* harmony export */   "XA": () => (/* binding */ getUserByResetToken),
 /* harmony export */   "Zy": () => (/* binding */ updateUserPassword),
 /* harmony export */   "kX": () => (/* binding */ removeUser)
 /* harmony export */ });
@@ -26,6 +27,7 @@ const USER_API_PATH = {
     GET: "/app/user",
     GETONE: "/app/user/get",
     GET_TOKEN: "/app/code",
+    GET_RESET_TOKEN: "/app/reset/code",
     CREATE: "/app/user/add",
     UPDATE: "/app/user/update",
     UPDATE_PASSWORD: "/app/password/update",
@@ -68,6 +70,17 @@ const getUserByToken = (token)=>async (dispatch)=>{
         {
             dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
             return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(USER_API_PATH.GET_TOKEN + "?token=" + token).then((response)=>{
+                var result = response.result ? response.result : response;
+                dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .single */ .Zr)(result));
+            }).catch((e)=>{
+                dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(false));
+            });
+        }
+    };
+const getUserByResetToken = (token)=>async (dispatch)=>{
+        {
+            dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .load */ .zD)(true));
+            return _lib_services_nodepress__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get(USER_API_PATH.GET_RESET_TOKEN + "?token=" + token).then((response)=>{
                 var result = response.result ? response.result : response;
                 dispatch((0,_lib_store_userSlice__WEBPACK_IMPORTED_MODULE_1__/* .single */ .Zr)(result));
             }).catch((e)=>{

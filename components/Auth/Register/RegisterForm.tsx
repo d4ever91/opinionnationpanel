@@ -11,10 +11,12 @@ import { useTranslation } from 'next-i18next';
 export const RegisterForm: React.FC = () => {
 
   const { t } = useTranslation();
-  const { isLoading } = useSelector((state: RootState) => state.loading);
+  const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const submitForm = async (values: Auth, resetForm: any) => {
+    setIsLoading(true)
     await authRegister(values);
     resetForm();
+    setIsLoading(false)
   }
   const SchemaLoginForm = yup.object().shape({
     firstName: yup.string().trim().required('First Name is required'),
@@ -60,14 +62,14 @@ export const RegisterForm: React.FC = () => {
             <FormErrorMessage>{formikProps.errors.company}</FormErrorMessage>
           </FormControl>
           <FormControl mt={4} isInvalid={formikProps.errors.terms && formikProps.touched.terms}>
-            <Checkbox  name="terms" checked={formikProps.values.terms} onChange={formikProps.handleChange} size='md' >{t('register.policy1')} <Link style={{color: '#3A7EC6'}} href='/term-of-use'>{t('register.policy2')}</Link>{t('register.policy3')}<Link style={{color: '#3A7EC6'}} href='/privacy-policy'>{t('register.policy4')}</Link></Checkbox>
+            <Checkbox  name="terms" defaultChecked={formikProps.values.terms} checked={formikProps.values.terms} onChange={formikProps.handleChange} size='md' >{t('register.policy1')} <Link style={{color: '#3A7EC6'}} href='/term-of-use'>{t('register.policy2')}</Link>{t('register.policy3')}<Link style={{color: '#3A7EC6'}} href='/privacy-policy'>{t('register.policy4')}</Link></Checkbox>
             <FormErrorMessage>{formikProps.errors.terms}</FormErrorMessage>
           </FormControl>
           <FormControl mt={4} isInvalid={formikProps.errors.news && formikProps.touched.news}>
             <Checkbox  name="news" checked={formikProps.values.news} onChange={formikProps.handleChange} size='md' >{t('register.news')}</Checkbox>
             <FormErrorMessage>{formikProps.errors.news}</FormErrorMessage>
           </FormControl>
-          <Button isLoading={isLoading} isDisabled={ !formikProps.values.terms ||  !formikProps.values.news} color="white" type="submit" style={{backgroundColor: '#3A7EC6'}} mt={4} width="full" size="lg" variant='solid'>
+          <Button isLoading={isLoading} isDisabled={ !formikProps.values.terms} color="white" type="submit" style={{backgroundColor: '#3A7EC6'}} mt={4} width="full" size="lg" variant='solid'>
           {t('register.createAccount')}
           </Button>
         </Form>

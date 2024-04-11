@@ -5,7 +5,9 @@
     "howitworks": "Our Process",
     "rewards": "Earnings",
     "contact": "Reach Us",
-    "register": "Create Account"
+    "register": "Create Account",
+    "dashboard":"Dashboard"
+
   },
   "home": {
     "title": "Welcome to Opinion Nation - Where Your Voice Matters",
@@ -75,8 +77,8 @@
     "register": " Register",
     "forget":"Forgot Password ?",
     "send":"Send",
-    "forgetPassword":"Forget Password"
-
+    "forgetPassword":"Forget Password",
+    "text":"Login to your account"
   },
   "about": {
     "p1": "Welcome to Opinion Nation - Where Your Voice Counts! At Opinion Nation, we value your opinion and believe in rewarding you for your time. If you want your voice to make an impact on businesses worldwide, joining our panel is a smart choice.",

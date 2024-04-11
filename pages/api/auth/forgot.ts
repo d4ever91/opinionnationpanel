@@ -20,16 +20,17 @@ handler.post( async (req, res) => {
    var user = await findUserByEmail(req.body.email);
    if(!user)  throw new ValidationError(messages.USER_NOT_EXISTS); 
    if(user && user.emailVerified){
-      var forgetToken = await bcrypt.hash(req.body.firstName, 10);
-      req.body.forgetToken= forgetToken;
-      var userData=await updateUserById(user._id,{ forgetToken });
-      await sendForgetLink({ forgetToken:userData.forgotToken,name:userData.firstName+' '+userData.lastName,email:userData.email})
+      var forgotToken = await bcrypt.hash(req.body.email, 10);
+      req.body.forgotToken= forgotToken;
+      var userData=await updateUserById(user._id,{ forgotToken });
+      console.log(userData)
+      await sendForgetLink({ forgotToken:userData.forgotToken,name:userData.firstName+' '+userData.lastName,email:userData.email})
       return sendResponse( req, res , statusCode.SUCCESS,'',messages.USER_EMAIL_INVITE_SEND_SUCCESSFULLY,data)
    }
    var uuid= await uuidv4();
    req.body.uuid=uuid;
    var data = await insertUser(req.body);
-   if(user) await sendForgetLink({ forgetToken:data.forgotToken,name:data.firstName+' '+data.lastName,email:data.email });
+   if(user) await sendForgetLink({ forgotToken:data.forgotToken,name:data.firstName+' '+data.lastName,email:data.email });
    return sendResponse( req, res , statusCode.SUCCESS,'',messages.USER_EMAIL_INVITE_SEND_SUCCESSFULLY,data)
   }
   catch (err) {

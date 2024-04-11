@@ -74,7 +74,6 @@ handler.put(async (req, res)=>{
     try {
         await (0,_lib_middlewares_db_mongodb__WEBPACK_IMPORTED_MODULE_3__/* .connect */ .$j)();
         if (req.body.password) req.body.password = await bcryptjs__WEBPACK_IMPORTED_MODULE_2___default().hash(req.body.password, 10);
-        req.body.emailVerified = true;
         var user = await (0,_lib_middlewares_mongo_service__WEBPACK_IMPORTED_MODULE_6__/* .updateUserById */ .TP)(req.query.id, req.body);
         return (0,_lib_utils_response__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z)(req, res, _lib_utils_statusCodes__WEBPACK_IMPORTED_MODULE_4__/* ["default"].SUCCESS */ .Z.SUCCESS, "/auth/login", _lib_utils_messages__WEBPACK_IMPORTED_MODULE_7__/* .messages.USER_UPDATED_SUCCESSFULLY */ .s.USER_UPDATED_SUCCESSFULLY, user);
     } catch (err) {

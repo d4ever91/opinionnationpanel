@@ -265,6 +265,9 @@ const Footer = ()=>{
 /* harmony import */ var next_i18next__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1377);
 /* harmony import */ var next_i18next__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_i18next__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_App_Country_CountrySelect__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6215);
+/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1649);
+/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -273,6 +276,7 @@ const Footer = ()=>{
 const Header = ()=>{
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
     const { locale  } = router;
+    const { status  } = (0,next_auth_react__WEBPACK_IMPORTED_MODULE_5__.useSession)();
     const { 0: selected , 1: setSelected  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(locale == "en" ? "US" : locale.toUpperCase());
     const { t  } = (0,next_i18next__WEBPACK_IMPORTED_MODULE_3__.useTranslation)();
     const changeHandler = (code)=>{
@@ -369,7 +373,11 @@ const Header = ()=>{
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     className: "nav-item",
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                    children: status != "unauthenticated" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                        className: "btn btn-singin",
+                                        onClick: ()=>routeTo("/app/dashboard"),
+                                        children: t("header.dashboard")
+                                    }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                         className: "btn btn-singin",
                                         onClick: ()=>routeTo("/auth/register"),
                                         children: t("header.register")

@@ -399,6 +399,13 @@ module.exports = require("formik");
 
 /***/ }),
 
+/***/ 1649:
+/***/ ((module) => {
+
+module.exports = require("next-auth/react");
+
+/***/ }),
+
 /***/ 1377:
 /***/ ((module) => {
 

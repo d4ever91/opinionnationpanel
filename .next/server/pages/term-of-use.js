@@ -350,6 +350,13 @@ module.exports = require("@chakra-ui/react");
 
 /***/ }),
 
+/***/ 1649:
+/***/ ((module) => {
+
+module.exports = require("next-auth/react");
+
+/***/ }),
+
 /***/ 1377:
 /***/ ((module) => {
 

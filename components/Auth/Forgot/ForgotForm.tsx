@@ -2,7 +2,7 @@ import { Form, Formik, FormikProps } from 'formik'
 import * as yup from 'yup'
 import React from 'react';
 import { Auth } from '@/lib/constants/auth';
-import { signIn } from 'next-auth/react';
+import { authForget } from '@/lib/action/auth';
 import { Button, FormControl, FormErrorMessage, Input } from '@chakra-ui/react';
 import { useToast } from '@/lib/hooks/useToast'
 import { useTranslation } from 'next-i18next';
@@ -14,8 +14,11 @@ export const ForgotForm: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const { showToast } = useToast()
 
-  const submitLogin = async (values: Auth) => {
-    
+  const submitForm = async (values: Auth,resetForm: any) => {
+    setIsLoading(true)
+    await authForget(values);
+    resetForm();
+    setIsLoading(false)
   }
 
   const SchemaLoginForm = yup.object().shape({
@@ -24,9 +27,9 @@ export const ForgotForm: React.FC = () => {
 
   return (
     <Formik
-      onSubmit={(values) => {
-        submitLogin(values);
-      }}
+    onSubmit={(values, { resetForm }) => {
+      submitForm(values, resetForm);
+    }}
       validateOnBlur={false}
       validateOnChange={true}
       validationSchema={SchemaLoginForm}

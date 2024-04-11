@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useTranslation } from 'next-i18next'
 import { useRouter } from "next/router";
 import CountrySelector from "../App/Country/CountrySelect";
+import { useSession } from "next-auth/react";
 
 export const HomeTranslate: React.FC = () => {
 
     const router = useRouter();
     const { locale } = router;
+    const { status } = useSession();
     const [selected, setSelected] = useState(locale == 'en' ? 'US' : locale.toUpperCase());
     const { t } = useTranslation();
 
@@ -71,9 +73,11 @@ export const HomeTranslate: React.FC = () => {
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="btn btn-singin" onClick={() => routeTo("/auth/register")}>
+                                    {status != 'unauthenticated' ? <a className="btn btn-singin" onClick={() => routeTo("/app/dashboard")}>
+                                        {t('header.dashboard')}
+                                    </a> : <a className="btn btn-singin" onClick={() => routeTo("/auth/register")}>
                                         {t('header.register')}
-                                    </a>
+                                    </a>}
                                 </li>
                                 <li className="nav-item">
                                     <CountrySelector
@@ -140,7 +144,7 @@ export const HomeTranslate: React.FC = () => {
                             {/* Start Fetatures */}
                             <div className="feature-item featured-border1">
                                 <div className="icons">
-                                <i className="lni-users"></i>
+                                    <i className="lni-users"></i>
                                 </div>
                                 <div className="feature-info float-left">
                                     <h4> {t('home.signup')}</h4>
@@ -157,8 +161,8 @@ export const HomeTranslate: React.FC = () => {
                         <div className="col-lg-6 col-md-6 col-xs-12 p-0">
                             {/* Start Fetatures */}
                             <div className="feature-item featured-border2">
-                            <div className="icons">
-                                <i className="lni lni-user"></i>
+                                <div className="icons">
+                                    <i className="lni lni-user"></i>
                                 </div>
                                 <div className="feature-info float-left">
                                     <h4>{t('home.completeprofile')} </h4>
@@ -175,8 +179,8 @@ export const HomeTranslate: React.FC = () => {
                         <div className="col-lg-6 col-md-6 col-xs-12 p-0">
                             {/* Start Fetatures */}
                             <div className="feature-item featured-border1">
-                            <div className="icons">
-                                <i className="lni lni-layers "></i>
+                                <div className="icons">
+                                    <i className="lni lni-layers "></i>
                                 </div>
                                 <div className="feature-info float-left">
                                     <h4>{t('home.takesurvey')}</h4>
@@ -193,8 +197,8 @@ export const HomeTranslate: React.FC = () => {
                         <div className="col-lg-6 col-md-6 col-xs-12 p-0">
                             {/* Start Fetatures */}
                             <div className="feature-item featured-border2">
-                            <div className="icons">
-                                <i className="lni lni-money-protection"></i>
+                                <div className="icons">
+                                    <i className="lni lni-money-protection"></i>
                                 </div>
                                 <div className="feature-info float-left">
                                     <h4> {t('home.earnrewards')}</h4>
@@ -239,7 +243,7 @@ export const HomeTranslate: React.FC = () => {
                         </div>
                         {/* End Col */}
                         {/* Start Col */}
- 
+
                         {/* End Col */}
                     </div>
                 </div>
